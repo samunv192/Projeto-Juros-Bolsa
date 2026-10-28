@@ -82,6 +82,8 @@ base_mensal <- setores_wide |>
 write_csv(base_mensal, file.path(PASTA_TRATADOS, "base_mensal.csv"))
 saveRDS(base_mensal,   file.path(PASTA_TRATADOS, "base_mensal.rds"))
 write_csv(ret_ativos,  file.path(PASTA_TRATADOS, "retornos_ativos_mensal.csv"))
+# Versão para Excel em português: ponto e vírgula entre colunas e vírgula decimal
+write_csv2(base_mensal, file.path(PASTA_TRATADOS, "base_mensal_excel.csv"))
 
 cat("\nBase mensal criada:", nrow(base_mensal), "meses, de",
     format(min(base_mensal$mes), "%m/%Y"), "a", format(max(base_mensal$mes), "%m/%Y"), "\n\n")

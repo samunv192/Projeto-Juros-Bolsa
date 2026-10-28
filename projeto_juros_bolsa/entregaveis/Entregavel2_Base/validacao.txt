@@ -1,0 +1,64 @@
+
+=== Checagens da base mensal ===
+  OK     meses consecutivos, sem buracos nem repetições 
+  OK     nenhum valor ausente em nenhuma coluna 
+  OK     as 9 ações têm retorno em todos os meses 
+  OK     retornos mensais de setores e Ibovespa abaixo de 60% em módulo 
+  OK     Selic sempre entre 1% e 20% a.a. 
+  OK     IPCA mensal sempre entre -2% e 3% 
+  OK     ciclo definido em todos os meses 
+
+=== Resumo ===
+  Período: 01/2015 a 09/2026 | 141 meses
+  Meses com mudança da Selic: 57 
+# A tibble: 2 × 2
+  ciclo meses
+  <chr> <int>
+1 alta     68
+2 queda    73
+
+  Retorno mensal (%) por série:
+# A tibble: 4 × 5
+  serie     media desvio   min   max
+  <chr>     <dbl>  <dbl> <dbl> <dbl>
+1 bancos     1.42   8.97 -33.3  32.5
+2 varejo     1.83  10.6  -24.9  31.4
+3 utilities  1.93   7.82 -32.7  30.3
+4 ibov       1.13   6.18 -29.9  17.0
+
+  Meses com retorno individual acima de 30% em módulo (conferir):
+# A tibble: 30 × 4
+   symbol   setor     mes          ret
+   <chr>    <chr>     <date>     <dbl>
+ 1 MGLU3.SA varejo    2015-12-01  99.9
+ 2 MGLU3.SA varejo    2022-08-01  65.5
+ 3 MGLU3.SA varejo    2017-02-01  62.6
+ 4 MGLU3.SA varejo    2023-01-01  61.7
+ 5 MGLU3.SA varejo    2026-09-01  55.1
+ 6 MGLU3.SA varejo    2017-08-01  54.8
+ 7 CMIG4.SA utilities 2018-10-01  54.1
+ 8 MGLU3.SA varejo    2023-11-01  51.9
+ 9 MGLU3.SA varejo    2016-03-01  48.5
+10 BBAS3.SA bancos    2016-03-01  47.5
+11 BBAS3.SA bancos    2018-10-01  45.2
+12 MGLU3.SA varejo    2017-07-01  43.3
+13 MGLU3.SA varejo    2017-12-01  42.0
+14 MGLU3.SA varejo    2025-03-01  42.0
+15 BBAS3.SA bancos    2020-03-01 -40.2
+16 MGLU3.SA varejo    2016-02-01  39.2
+17 CMIG4.SA utilities 2016-03-01  37.8
+18 MGLU3.SA varejo    2018-10-01  37.8
+19 SBSP3.SA utilities 2019-01-01  37.7
+20 MGLU3.SA varejo    2023-10-01 -37.3
+21 MGLU3.SA varejo    2022-06-01 -37.1
+22 LREN3.SA varejo    2020-03-01 -36.9
+23 CMIG4.SA utilities 2020-03-01 -36.2
+24 SBSP3.SA utilities 2020-05-01  35.5
+25 LREN3.SA varejo    2023-11-01  33.5
+26 SBSP3.SA utilities 2020-03-01 -33.4
+27 BBDC4.SA bancos    2020-03-01 -31.9
+28 MGLU3.SA varejo    2016-08-01  31.5
+29 LREN3.SA varejo    2024-08-01  30.5
+30 RADL3.SA varejo    2025-08-01  30.3
+
+Base validada: pronta para a análise.
